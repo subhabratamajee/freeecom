@@ -4,7 +4,17 @@ const nextConfig = {
   swcMinify: true,
   experimental:{
     externalDir:true,
-  }
+  },
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'cdn.sanity.io',
+        port: '',
+        pathname: '/images/33arqb3o/production/**',
+      },
+    ],
+  },
 }
 
 module.exports = nextConfig

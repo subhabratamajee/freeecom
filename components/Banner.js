@@ -3,7 +3,7 @@ import React from 'react'
 import Category from './Category'
 function Banner() {
   return (
-    <div className='container w-screen top-0 -z-10 '>
+    <div className='container w-full  top-0 -z-10 '>
         <div className='banner px-4 w-screen'>
           <div className='box absolute'>
             <h2 className='largeText1 font-bold sm:text-3xl text-xl text-orange-400 pl-6 sm:pl-12 pt-2 md:pt-8 lg:pt-14 lg:pl-36'> New Arrival</h2>

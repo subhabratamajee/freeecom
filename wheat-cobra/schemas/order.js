@@ -1,8 +1,18 @@
 export default {
-    name: 'product',
+    name: 'order',
     type: 'document',
-    title: 'Product',
-    fields: [{
+    title: 'Order',
+    fields: [
+        {
+            name: 'orderId',
+            title: 'Order ID',
+            type:'string',},
+{
+    name:'userId', 
+    title: 'User ID',
+    type:'string',
+},
+        {
         name: 'name',
         title: 'Name',
         type: 'string',
@@ -27,11 +37,6 @@ export default {
 {
     name:'availableProducts',
     title:'Available Products',
-    type:'number',
-},
-{
-    name:'sold',
-    title:'Sold',
     type:'number',
 },
 {

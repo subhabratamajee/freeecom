@@ -1,12 +1,12 @@
 import Head from "next/head";
 import Image from "next/image";
 import Layout from "../components/Layout";
-// import { client, urlFor } from "../lib/client";
+import { client, urlFor } from "../lib/client";
 import 'tailwindcss/tailwind.css'
 import Banner from "../components/Banner";
 import Category from "../components/Category";
 import AllProduct from "../components/AllProduct";
-export default function Home({  }) {
+export default function Home({ products }) {
   // console.log(products);
   return (
     <div>
@@ -27,22 +27,22 @@ export default function Home({  }) {
           <h1 className="content-center text-gray-500 font-semibold text-xl sm:text-3xl text-center mt-2">Category</h1>
           <Category/>
           <h1 className="content-center text-gray-500 font-semibold text-xl sm:text-3xl text-center mt-2">Products</h1>
-          <AllProduct  />
+          <AllProduct desc='All type of Lathers Products' title='All Products' products={products} />
         </Layout>
       </div>
     </div>
   );
 }
 
-// export const getServerSideProps = async () => {
-//   const query = `*[_type=="product"]`;
-//   const products = await client.fetch(query);
-//   return {
-//     props: {
-//       products,
-//     },
-//   };
-// };
+export const getServerSideProps = async () => {
+  const query = `*[_type=="product"]`;
+  const products = await client.fetch(query);
+  return {
+    props: {
+      products,
+    },
+  };
+};
 
 // import Head from "next/head";
 // import Image from "next/image";
